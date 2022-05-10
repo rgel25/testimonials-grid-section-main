@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+:root {
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-grayish-blue-medium-opacity: hsla(217, 19%, 35%, 0.7);
+  --very-dark-grayish-blue-low-opacity: hsla(217, 19%, 35%, 0.5);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --white-low-opacity: hsla(0, 0%, 100%, 0.3);
+  --light-gray: hsl(0, 0%, 81%);
+  --light-gray-low-opacity: hsla(0, 0%, 81%, 0.5);
+  --light-gray-medium-opacity: hsla(0, 0%, 81%, 0.7);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+  /* 1. "Verified Graduate" has the same color as the person's name with 50% opacity
+    2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 15px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500;
+}
+
+.main {
+  min-height: calc(100vh - 0px);
+  background-color: var(--light-grayish-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  margin: 1.5rem;
+  padding: 1.5rem 2rem 1.5rem 2rem;
+  border-radius: 0.625rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+}
+.card:nth-of-type(1) {
+  background-color: var(--moderate-violet);
+  background-image: url(./images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: right 2.5vw top;
+}
+.card:nth-of-type(2) {
+  background-color: var(--very-dark-grayish-blue);
+}
+.card:nth-of-type(3) {
+  background-color: var(--white);
+}
+.card:nth-of-type(4) {
+  background-color: var(--very-dark-blackish-blue);
+}
+.card:nth-of-type(5) {
+  background-color: var(--white);
+}
+
+.card-profile {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  color: var(--light-gray);
+  margin-bottom: 1rem;
+}
+
+.status {
+  font-size: 0.8em;
+  color: var(--light-gray-low-opacity);
+}
+
+.profile-picture-container {
+  margin-right: 1em;
+}
+
+.profile-picture-container img {
+  height: 2.25em;
+  border-radius: 50%;
+  border: 0.15rem solid var(--white-low-opacity);
+}
+
+.card-header {
+  color: var(--light-grayish-blue);
+  font-size: 1.25em;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 1em;
+}
+
+.card-subheader {
+  color: var(--light-gray-medium-opacity);
+  font-size: 0.9em;
+  margin-bottom: 0.5rem;
+}
+
+/* BG LIGHT START - MUST BE UNDER CARD PROFILE COLOR STYLING */
+
+.bg-light-header {
+  color: var(--very-dark-grayish-blue);
+}
+
+.bg-light-med-opacity {
+  color: var(--very-dark-grayish-blue-medium-opacity);
+}
+
+.bg-light-low-opacity {
+  color: var(--very-dark-grayish-blue-low-opacity);
+}
+
+.bg-dark-border img {
+  border: 0.15rem solid var(--moderate-violet);
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 992px) {
+  .main {
+    height: calc(100vh - 0px);
+  }
+
+  .container {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    grid-template-areas:
+      "a a b e"
+      "c d d e";
+    padding: 1rem;
+    max-width: 1000px;
+  }
+
+  .card {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .card:nth-of-type(1) {
+    grid-area: a;
+    background-position: right 5vw top;
+  }
+  .card:nth-of-type(2) {
+    grid-area: b;
+  }
+  .card:nth-of-type(3) {
+    grid-area: c;
+  }
+  .card:nth-of-type(4) {
+    grid-area: d;
+  }
+  .card:nth-of-type(5) {
+    grid-area: e;
+  }
+
+  .attribution {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
